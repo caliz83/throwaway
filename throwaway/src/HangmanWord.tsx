@@ -8,7 +8,7 @@ type HangmanWordProps = {
 
 const HangmanWord = ({guessedLetters, wordToGuess, reveal = false}: HangmanWordProps) => {
     // const word = 'text';
-    // const guessedLetters = ['t', 'e', 'g'];
+    // const guessedLetters = ['t', 'e'];
   return (
     <div style={{ display: 'flex', gap: '.25em', fontSize: '6rem', fontWeight: 'bold', textTransform: 'uppercase', fontFamily: 'monospace'}}>
         {wordToGuess.split('').map((letter, index) => (

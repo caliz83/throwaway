@@ -1,4 +1,4 @@
-import styles from './Keyboard.css'
+import './Keyboard.css'
 
 const Keys = [
     'a',
@@ -42,8 +42,11 @@ const Keyboard = ({activeLetters, disabled = false, inactiveLetters, addGuessedL
         {Keys.map(key => {
             const isActive = activeLetters.includes(key)
             const isInactive = inactiveLetters.includes(key)
+
+            const btnClass = ['btn', isActive ? 'active' : '', isInactive ? 'inactive' : ''].join(' ').trim();
+
             return (
-                <button onClick={() => addGuessedLetter(key)} className={`${styles.btn} ${isActive ? styles.active : ''} ${isInactive ? styles.inactive : ''}`} disabled={isInactive || isActive || disabled} key={key}>{key}</button>
+                <button onClick={() => addGuessedLetter(key)} className={btnClass} disabled={isInactive || isActive || disabled} key={key}>{key}</button>
             )
         })}
     </div>
